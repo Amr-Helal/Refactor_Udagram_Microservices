@@ -1,7 +1,8 @@
-Udagram Image Filtering Microservice
+#Udagram Image Filtering Microservice
+
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
 
-Installing project dependencies
+##Installing project dependencies
 This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the root of this repository. After cloning, open your terminal and run:
 
 npm install
@@ -14,7 +15,7 @@ docker-compose -f docker-compose-build.yaml build --parallel
 
 docker-compose up
 
-Kuberentes configuration
+##Kuberentes configuration
 kubectl apply -f backend-feed-deployment.yaml
 
 kubectl apply -f backend-user-deployment.yaml
