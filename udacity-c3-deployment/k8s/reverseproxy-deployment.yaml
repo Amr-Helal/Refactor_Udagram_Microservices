@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: reverseproxy
+  name: reverseproxy
+spec:
+  selector:
+    matchLabels:
+      service: reverseproxy 
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: reverseproxy
+    spec:
+      containers:
+      - image: amrhelal/reverseproxy
+        name: reverseproxy
+        imagePullPolicy: Always          
+        resources:
+          requests:
+            memory: "16Mi"
+            cpu: "65m"
+          limits:
+            memory: "256Mi"
+            cpu: "125m"      
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
